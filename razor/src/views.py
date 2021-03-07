@@ -14,7 +14,7 @@ def home(request):
         amount = int(request.POST.get('amount')) * 100
         email = request.POST.get('email')
         # print(name, amount)
-        client = razorpay.Client(auth=('rzp_test_NobGhuiQztIFuo', 'WiOKAwsz1TdqgvSHyJhwUts3'))
+        client = razorpay.Client(auth=('rzp_test_FfeAAXpjTb4AWu','3oLEUDLdQRn5USGtAxGf1ZTC'))
         payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': '1'})
         # print(payment)
         coffee = Coffee(name=name, email=email, amount=amount, payment_id=payment['id'])
